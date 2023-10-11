@@ -1,0 +1,61 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Criptografia</title>
+    <script lang="JavaScript">
+        function criptografar()
+        {
+            var str, str2, i, codAtual, codNovo;
+
+            str = document.frm.txtCarac.value.toUpperCase();
+            str2= "";
+
+            for(i=0; i<str.length;++i)
+            {
+                codAtual = str.charCodeAt(i);
+                codNovo = codAtual * 2;
+                str2 += String.fromCharCode(codNovo);
+                
+                
+            }
+            document.getElementById("resultado").innerHTML = str2;
+
+        }       
+          
+        
+        function descriptografar()
+        {
+
+            var str, str2, i, codAtual, codNovo;
+
+            str = document.frm.txtCarac.value.toUpperCase();
+            str2 = "";
+
+            for (i = 0; i < str.length; ++i) {
+                codAtual = str.charCodeAt(i);
+                codNovo = codAtual / 2; 
+                str2 += String.fromCharCode(codNovo);
+            }
+
+            
+            document.getElementById("resultado").innerHTML = str;  
+
+
+
+
+        }
+       
+    </script>
+
+</head>
+<body>
+    
+ <form name="frm">
+informe para criptografar: <input type="text" name="txtCarac" value=""><br>
+    
+<input type="button" value="criptografar" onclick="criptografar()">
+<input type="button" value="descriptografar" onclick="descriptografar()">
+</form>
+<div id="resultado"></div>
+</body>
+</html>
